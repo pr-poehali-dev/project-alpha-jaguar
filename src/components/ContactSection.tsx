@@ -26,10 +26,19 @@ export function ContactSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-4xl lg:text-5xl font-light mb-4">Напишите мне</h2>
+            <h2 className="font-serif text-4xl lg:text-5xl font-light mb-4">Связаться</h2>
             <p className="text-muted-foreground text-lg">
-              Понравился рассказ или хотите поделиться мыслями о прочитанном? Буду рад вашему письму.
+              Если текст отозвался или хотите поделиться мыслями — звоните или пишите.
             </p>
+          </div>
+
+          <div className="text-center mb-10">
+            <a
+              href="tel:88005556677"
+              className="font-serif text-3xl font-light hover:text-muted-foreground transition-colors"
+            >
+              8 800 555-56-77
+            </a>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

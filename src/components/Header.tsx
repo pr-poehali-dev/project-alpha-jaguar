@@ -18,7 +18,7 @@ export function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#" className="font-serif text-2xl lg:text-3xl font-light tracking-wide">
-            Автор
+            Протоиерей Сергей Холодков
           </a>
 
           {/* Desktop Navigation */}
