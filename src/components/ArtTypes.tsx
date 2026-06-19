@@ -1,106 +1,57 @@
 import { Card, CardContent } from "@/components/ui/card";
+import Icon from "@/components/ui/icon";
 
-interface ArtType {
+interface Genre {
   name: string;
   description: string;
-  image: string;
-  examples: string;
+  icon: string;
 }
 
-const artTypes: ArtType[] = [
+const genres: Genre[] = [
   {
-    name: "Живопись",
+    name: "Рассказы",
     description:
-      "Практика нанесения краски, пигмента, цвета или другого материала на твёрдую поверхность. От масла и акрила до акварели и гуаши.",
-    image: "/oil-painting-canvas-classical-style.jpg",
-    examples: "Масло, Акрил, Акварель, Фреска",
+      "Короткие истории, в которых одно событие или встреча раскрывает целый мир. Читаются за один вечер.",
+    icon: "BookOpen",
   },
   {
-    name: "Скульптура",
+    name: "Повести",
     description:
-      "Трёхмерное искусство, создаваемое путём формования или комбинирования материалов. От классического мрамора до современных инсталляций.",
-    image: "/marble-sculpture-classical-statue.jpg",
-    examples: "Камень, Бронза, Дерево, Глина",
+      "Более длинные сюжеты с глубокими героями и неспешным повествованием — для долгого, вдумчивого чтения.",
+    icon: "Library",
   },
   {
-    name: "Фотография",
+    name: "Эссе",
     description:
-      "Искусство захвата света для создания изображений. От документальной до художественной, от аналоговой до цифровой.",
-    image: "/fine-art-black-white-photography.jpg",
-    examples: "Портрет, Пейзаж, Абстракция, Документалистика",
+      "Размышления о жизни, книгах и времени. Личные заметки, в которых мысль важнее сюжета.",
+    icon: "PenLine",
   },
   {
-    name: "Цифровое искусство",
+    name: "Поэзия",
     description:
-      "Искусство, созданное с помощью цифровых технологий. Включает цифровую живопись, 3D-моделирование, генеративное искусство и NFT.",
-    image: "/digital-art-abstract-colorful-design.jpg",
-    examples: "3D-арт, Цифровая живопись, Генеративное, NFT",
-  },
-  {
-    name: "Гравюра",
-    description:
-      "Процесс создания произведений путём печати, обычно на бумаге. Включает офорт, литографию и шелкографию.",
-    image: "/printmaking-woodblock-print-art.jpg",
-    examples: "Офорт, Литография, Шелкография, Ксилография",
-  },
-  {
-    name: "Графика",
-    description:
-      "Основа визуального искусства, использующая линии на поверхности. От карандашных набросков до угольных шедевров.",
-    image: "/charcoal-drawing-portrait-sketch.jpg",
-    examples: "Карандаш, Уголь, Тушь, Пастель",
-  },
-  {
-    name: "Керамика",
-    description:
-      "Искусство создания объектов из глины и других материалов. От функциональной посуды до скульптурных работ.",
-    image: "/ceramic-pottery-handmade-vase.jpg",
-    examples: "Гончарство, Фарфор, Шамот, Раку",
-  },
-  {
-    name: "Смешанная техника",
-    description:
-      "Работы, сочетающие различные материалы и техники. Объединяет традиционные и современные методы.",
-    image: "/mixed-media-collage-contemporary-art.jpg",
-    examples: "Коллаж, Ассамбляж, Инсталляция, Мультимедиа",
-  },
-  {
-    name: "Текстильное искусство",
-    description:
-      "Искусство, создаваемое из ткани, волокна и нити. От традиционного ткачества до современных скульптур из волокна.",
-    image: "/textile-art-woven-tapestry.jpg",
-    examples: "Ткачество, Вышивка, Квилтинг, Файбер-арт",
+      "Стихи и небольшие лирические тексты — попытка поймать настроение в нескольких строках.",
+    icon: "Feather",
   },
 ];
 
 export function ArtTypes() {
   return (
-    <section className="py-24 px-6 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
+    <section id="genres" className="py-16 lg:py-24 bg-muted/30">
+      <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl mb-4 text-balance">Изучайте формы искусства</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Откройте для себя разнообразие техник и материалов, которые художники используют для выражения творческого видения
+          <h2 className="font-serif text-4xl md:text-5xl font-light mb-4 text-balance">Жанры</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Выберите то, что вам по настроению — от коротких рассказов до неспешных повестей
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {artTypes.map((type) => (
-            <Card key={type.name} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative h-64 w-full">
-                <img
-                  src={type.image}
-                  alt={`Пример: ${type.name}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="font-serif text-2xl mb-3">{type.name}</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{type.description}</p>
-                <div className="pt-4 border-t">
-                  <p className="text-sm font-medium mb-1">Популярные формы:</p>
-                  <p className="text-sm text-muted-foreground">{type.examples}</p>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {genres.map((genre) => (
+            <Card key={genre.name} className="border-border hover:shadow-md transition-shadow">
+              <CardContent className="p-8">
+                <Icon name={genre.icon} size={32} className="mb-5 text-foreground" />
+                <h3 className="font-serif text-2xl font-light mb-3">{genre.name}</h3>
+                <p className="text-muted-foreground leading-relaxed">{genre.description}</p>
               </CardContent>
             </Card>
           ))}

@@ -1,46 +1,52 @@
-interface Artwork {
+interface Work {
   title: string;
-  artist: string;
+  genre: string;
   year: string;
-  image: string;
+  excerpt: string;
 }
 
-const artworks: Artwork[] = [
+const works: Work[] = [
   {
-    title: "Хроматический резонанс",
-    artist: "Елена Васильева",
+    title: "Тишина перед рассветом",
+    genre: "Рассказ",
     year: "2024",
-    image: "/abstract-colorful-painting-modern-art.jpg",
+    excerpt:
+      "История об одном утре, которое изменило всё. О том, как в самые тихие минуты мы слышим себя яснее всего.",
   },
   {
-    title: "Городские фрагменты",
-    artist: "Марк Ченов",
+    title: "Письма, которые не отправили",
+    genre: "Повесть",
     year: "2024",
-    image: "/contemporary-sculpture-installation.jpg",
+    excerpt:
+      "Героиня находит пачку старых писем и через них заново проживает чужую — и свою — жизнь.",
   },
   {
-    title: "Слои памяти",
-    artist: "София Андерсон",
+    title: "Город под дождём",
+    genre: "Рассказ",
     year: "2023",
-    image: "/mixed-media-collage-art.jpg",
+    excerpt:
+      "Зарисовка о случайной встрече двух незнакомцев, которых на пять минут объединил один зонт.",
   },
   {
-    title: "Серия «Идентичность» №7",
-    artist: "Яков Окунев",
+    title: "Заметки на полях",
+    genre: "Эссе",
     year: "2024",
-    image: "/fine-art-portrait-photography.jpg",
+    excerpt:
+      "Размышления о книгах, времени и о том, почему мы перечитываем любимые страницы снова и снова.",
   },
   {
-    title: "Эфемерные пространства",
-    artist: "Елена Васильева",
+    title: "Сад, которого нет",
+    genre: "Рассказ",
     year: "2023",
-    image: "/abstract-minimalist-painting.jpg",
+    excerpt:
+      "Воспоминание о бабушкином доме, где каждое дерево хранило свою маленькую тайну.",
   },
   {
-    title: "Цифровая природа",
-    artist: "Марк Ченов",
-    year: "2024",
-    image: "/digital-art-nature-inspired.jpg",
+    title: "Долгая дорога домой",
+    genre: "Повесть",
+    year: "2022",
+    excerpt:
+      "О возвращении в место, которое мы покинули, и о том, что встречает нас по прибытии.",
   },
 ];
 
@@ -49,27 +55,27 @@ export function ArtworkGrid() {
     <section id="works" className="py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mb-12">
-          <h2 className="font-serif text-4xl lg:text-5xl font-light mb-4">Избранные работы</h2>
-          <p className="text-muted-foreground text-lg">Подборка произведений из текущей экспозиции</p>
+          <h2 className="font-serif text-4xl lg:text-5xl font-light mb-4">Произведения</h2>
+          <p className="text-muted-foreground text-lg">Подборка рассказов, повестей и эссе</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-          {artworks.map((artwork, index) => (
-            <div key={index} className="group cursor-pointer overflow-hidden bg-card">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={artwork.image}
-                  alt={artwork.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-serif text-xl font-light mb-1">{artwork.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {artwork.artist}, {artwork.year}
-                </p>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {works.map((work, index) => (
+            <article
+              key={index}
+              className="group cursor-pointer bg-card border border-border rounded-sm p-8 transition-colors hover:border-foreground/40"
+            >
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+                {work.genre} · {work.year}
+              </p>
+              <h3 className="font-serif text-2xl font-light mb-3 group-hover:text-muted-foreground transition-colors">
+                {work.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">{work.excerpt}</p>
+              <span className="text-sm tracking-wide border-b border-foreground/30 pb-0.5">
+                Читать
+              </span>
+            </article>
           ))}
         </div>
       </div>

@@ -26,9 +26,9 @@ export function ContactSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-4xl lg:text-5xl font-light mb-4">Свяжитесь с нами</h2>
+            <h2 className="font-serif text-4xl lg:text-5xl font-light mb-4">Напишите мне</h2>
             <p className="text-muted-foreground text-lg">
-              Хотите узнать больше о наших художниках или приобрести работу? Мы будем рады вашему обращению.
+              Понравился рассказ или хотите поделиться мыслями о прочитанном? Буду рад вашему письму.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export function ContactSection() {
 
             <div>
               <label htmlFor="message" className="block text-sm mb-2">
-                Сообщение
+                Ваше сообщение
               </label>
               <Textarea
                 id="message"
@@ -76,7 +76,7 @@ export function ContactSection() {
             </div>
 
             <Button type="submit" className="w-full" size="lg">
-              Отправить сообщение
+              Отправить письмо
             </Button>
           </form>
         </div>

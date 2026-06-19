@@ -18,28 +18,28 @@ export function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#" className="font-serif text-2xl lg:text-3xl font-light tracking-wide">
-            Галерист
+            Автор
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <button
-              onClick={() => scrollToSection("artists")}
-              className="text-sm tracking-wide hover:text-muted-foreground transition-colors"
-            >
-              Художники
-            </button>
-            <button
               onClick={() => scrollToSection("works")}
               className="text-sm tracking-wide hover:text-muted-foreground transition-colors"
             >
-              Работы
+              Произведения
+            </button>
+            <button
+              onClick={() => scrollToSection("genres")}
+              className="text-sm tracking-wide hover:text-muted-foreground transition-colors"
+            >
+              Жанры
             </button>
             <button
               onClick={() => scrollToSection("about")}
               className="text-sm tracking-wide hover:text-muted-foreground transition-colors"
             >
-              О нас
+              Об авторе
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -65,22 +65,22 @@ export function Header() {
           <nav className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               <button
-                onClick={() => scrollToSection("artists")}
-                className="text-sm tracking-wide hover:text-muted-foreground transition-colors text-left"
-              >
-                Художники
-              </button>
-              <button
                 onClick={() => scrollToSection("works")}
                 className="text-sm tracking-wide hover:text-muted-foreground transition-colors text-left"
               >
-                Работы
+                Произведения
+              </button>
+              <button
+                onClick={() => scrollToSection("genres")}
+                className="text-sm tracking-wide hover:text-muted-foreground transition-colors text-left"
+              >
+                Жанры
               </button>
               <button
                 onClick={() => scrollToSection("about")}
                 className="text-sm tracking-wide hover:text-muted-foreground transition-colors text-left"
               >
-                О нас
+                Об авторе
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
