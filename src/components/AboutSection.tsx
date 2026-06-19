@@ -24,8 +24,8 @@ export function AboutSection() {
           </div>
           <div className="aspect-[4/3] overflow-hidden rounded-sm">
             <img
-              src="https://cdn.poehali.dev/projects/adc8a424-736c-4066-a2e5-8c26f6bd5548/files/e76cb302-dab5-4f81-887b-753c8cb348b7.jpg"
-              alt="Рабочий стол писателя"
+              src="https://cdn.poehali.dev/projects/adc8a424-736c-4066-a2e5-8c26f6bd5548/bucket/23411248-3466-4f6b-adb3-a011d128b236.jpg"
+              alt="Протоиерей Сергей Холодков"
               className="w-full h-full object-cover"
             />
           </div>
